@@ -17,8 +17,7 @@ function App() {
         >
           Нажми меня
         </button>
-        <Product product={products[0]}/>
-        <Product product={products[1]}/>
+        {products.map(product => <Product product={product} key={product.id}/>)}
       </div>
     </>
   );
