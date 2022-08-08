@@ -1,8 +1,9 @@
 type ModalProps = {
   children: React.ReactNode;
+  title: string;
 }
 
-function Modal({ children }:ModalProps) {
+function Modal({ children, title }:ModalProps) {
   return(
     <>
       <div 
@@ -11,7 +12,7 @@ function Modal({ children }:ModalProps) {
       <div
         className='w-[500px] p-5 rounded bg-white absolute top-10 left-1/2 -translate-x-1/2'
       >
-        <h1>Modal</h1>
+        <h1 className='text-2xl text-center mb-2'>{title}</h1>
 
         {children}
       </div>
