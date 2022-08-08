@@ -2,6 +2,8 @@ import Product from './components/product/product';
 import useProducts from './hooks/products';
 import LoadingComponent from './components/loading/loading';
 import ErrorMessage from './components/errorMessage/errorMessage';
+import Modal from './components/modal-component/modal';
+import CreateProduct from './components/create-product/createProduct';
 
 
 function App() {
@@ -14,6 +16,10 @@ function App() {
         {loading && <LoadingComponent />}
         {error && <ErrorMessage error= {error} />}
         {products.map(product => <Product product={product} key={product.id}/>)}
+
+        <Modal>
+          <CreateProduct />
+        </Modal>
       </div>
     </>
   );
