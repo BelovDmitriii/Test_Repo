@@ -6,3 +6,30 @@
   margin: 0;
   font-size: 0.9em;
 }
+
+.customButton {
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.buttonDanger {
+  background-color: #f44336;
+}
+
+.controls {
+  border:1px solid #ccc;
+  width: 270px;
+  padding: 20px;
+  margin: 10px 0px;
+}
+
+.symbols-count {
+  margin: 0;
+  font-size: 0.7em;
+}

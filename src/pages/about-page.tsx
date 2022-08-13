@@ -1,4 +1,5 @@
 import About from "../components/about/about";
+import Counter from "../components/counter/counter";
 
 export function AboutPage () {
   return (
@@ -7,6 +8,7 @@ export function AboutPage () {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus excepturi, dolore fugiat commodi eius quo repudiandae quidem nisi distinctio minus quibusdam qui praesentium aliquam labore ex quam perferendis dolorum dicta non blanditiis inventore! Sapiente a perspiciatis, perferendis, ab quaerat porro dolore laudantium labore iusto eaque quod exercitationem, autem ullam eveniet.
         <br/>
         <About />
+        <Counter />
       </div>
     </>
   );
