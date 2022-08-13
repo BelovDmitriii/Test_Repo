@@ -1,7 +1,10 @@
+import { useState } from "react";
 import About from "../components/about/about";
 import Counter from "../components/counter/counter";
 
 export function AboutPage () {
+  const [count, setCount] = useState();
+  const [text, setText] = useState('');
   return (
     <>
       <div className="w-[500px] p-5 m-auto bg-blue-100 top-10 align-center">
