@@ -1,13 +1,24 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 
 type CounterProps = {
   count: number;
   onIncBtnClick: () => void;
   onDecBtnClick: () => void;
+  text: string;
 }
 
-function Counter({count, onIncBtnClick, onDecBtnClick}:CounterProps): JSX.Element {
+function Counter({count, onIncBtnClick, onDecBtnClick, text}:CounterProps): JSX.Element {
   console.log('Render Counter');
+  // const testString = 'Hello, World';
+
+  const getMagicCount = (word: string) => {
+    let i = 0;
+    while (i < 1000000000) {i++;}
+    return i + word.length;
+  }
+
+  const magicCount = useMemo(() => getMagicCount(text), [text]);
+
   return(
     <div className="controls">
       <button
@@ -24,6 +35,7 @@ function Counter({count, onIncBtnClick, onDecBtnClick}:CounterProps): JSX.Elemen
       </button>
       <br />
       <span>Макс. символов <b>{count}</b></span>
+      <p>Магическое число: {magicCount}</p>
     </div>
   );
 }

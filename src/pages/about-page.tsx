@@ -32,6 +32,7 @@ export function AboutPage () {
           count = {count}
           onIncBtnClick = {handleIncBtnClick}
           onDecBtnClick = {handleDecBtnClick}
+          text = {text}
           />
       </div>
     </>
