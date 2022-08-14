@@ -28,6 +28,4 @@ function Counter({count, onIncBtnClick, onDecBtnClick}:CounterProps): JSX.Elemen
   );
 }
 
-export default memo(Counter, (prevProps, nextProps)=> {
-  return prevProps.count === nextProps.count;
-});
+export default memo(Counter);

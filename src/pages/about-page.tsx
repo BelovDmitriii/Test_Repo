@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import About from "../components/about/about";
 import Counter from "../components/counter/counter";
 
@@ -8,6 +8,16 @@ const COUNTER_STEP = 5;
 export function AboutPage () {
   const [count, setCount] = useState(DEFAULT_MAX_LENGTH);
   const [text, setText] = useState('');
+
+  const handleIncBtnClick = useCallback(
+    () => setCount((prevCount) => prevCount + COUNTER_STEP),
+    []
+  );
+  
+  const handleDecBtnClick = useCallback(
+    () => setCount((prevCount) => prevCount - COUNTER_STEP),
+    []
+  );
   return (
     <>
       <div className="w-[500px] p-5 m-auto bg-blue-100 top-10 align-center">
@@ -20,8 +30,8 @@ export function AboutPage () {
           />
         <Counter 
           count = {count}
-          onIncBtnClick = {() => setCount((prevCount) => prevCount + COUNTER_STEP)}
-          onDecBtnClick = {() => setCount((prevCount) => prevCount - COUNTER_STEP)}
+          onIncBtnClick = {handleIncBtnClick}
+          onDecBtnClick = {handleDecBtnClick}
           />
       </div>
     </>
