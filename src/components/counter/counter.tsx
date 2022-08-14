@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 type CounterProps = {
   count: number;
   onIncBtnClick: () => void;
@@ -5,6 +7,7 @@ type CounterProps = {
 }
 
 function Counter({count, onIncBtnClick, onDecBtnClick}:CounterProps): JSX.Element {
+  console.log('Render Counter');
   return(
     <div className="controls">
       <button
@@ -25,4 +28,6 @@ function Counter({count, onIncBtnClick, onDecBtnClick}:CounterProps): JSX.Elemen
   );
 }
 
-export default Counter;
+export default memo(Counter, (prevProps, nextProps)=> {
+  return prevProps.count === nextProps.count;
+});
