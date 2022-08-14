@@ -18,7 +18,11 @@ export function AboutPage () {
           maxLength = {count}
           value = {text}
           />
-        <Counter />
+        <Counter 
+          count = {count}
+          onIncBtnClick = {() => setCount((prevCount) => prevCount + COUNTER_STEP)}
+          onDecBtnClick = {() => setCount((prevCount) => prevCount - COUNTER_STEP)}
+          />
       </div>
     </>
   );

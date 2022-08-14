@@ -1,14 +1,26 @@
-function Counter() {
+type CounterProps = {
+  count: number;
+  onIncBtnClick: () => void;
+  onDecBtnClick: () => void;
+}
+
+function Counter({count, onIncBtnClick, onDecBtnClick}:CounterProps): JSX.Element {
   return(
     <div className="controls">
-      <button className="customButton">
+      <button
+        className="customButton"
+        onClick={onIncBtnClick}
+        >
         +
       </button>
-      <button className="customButton buttonDanger">
+      <button
+        className="customButton buttonDanger"
+        onClick={onDecBtnClick}
+        >
         -
       </button>
       <br />
-      <span>Макс. символов <b>0</b></span>
+      <span>Макс. символов <b>{count}</b></span>
     </div>
   );
 }
